@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <title>Free Wifi Jepara - Redirect</title>
+    <link rel="stylesheet" href="static\css\style1.css">
+    <script>
+        function startClock() {
+            $(if popup == 'true')
+            open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+        $(endif)
+        location.href = unescape('$(link-redirect-esc)');
+        }
+
+    </script> 
+</head>
+
+<body onLoad="startClock()">
+    <div class="ie-fixMinHeight" style="display: flex; flex-flow:column wrap;">
+        <div class="header">
+            <img id="logo-lm" src="static\img\logo-lifemedia.png" alt="lifemedia">
+            <div class="nav">
+                    <ul class="navbar-link">
+                        <li><a href="login.html">Beranda</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="https://wa.me/6285159174877"><button class="btn-kontak">Kontak</button></a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="wrap" style="height: max-content;">
+                <h1 class="headline">Kamu telah terhubung <br>Jaringan Free Wi-Fi Jepara</h1>
+                <p class="info">Jika belum terhubung klik <a href="$(link-redirect)">di sini</a></p>
+            </div>>
+        </div>
+        <div class="footer">
+            <div class="ft-kontak">
+                <img id="ft-wa" src="static\img\WhatsApp.svg.webp" alt="logo-wa">
+                <p id="detail-bantuan">Butuh Bantuan? Hubungi WA <a href="https://wa.me/6285159174877">6285159174877</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

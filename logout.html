@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<title>Internet hotspot - Log out</title>
+<link rel="stylesheet" href="static\css\style1.css">
+<!-- <script>
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+</script> -->
+</head>
+
+<body>
+    <div class="ie-fixMinHeight" style="display: flex; flex-flow:column wrap;">
+        <!-- <div class="header">
+            <img id="logo-lm" src="static\img\logo-lifemedia.png" alt="lifemedia">
+            <div class="nav">
+                    <ul class="navbar-link">
+                        <li><a href="login.html">Beranda</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="https://wa.me/6285159174877"><button class="btn-kontak">Kontak</button></a></li>
+                    </ul>
+            </div>
+        </div> -->
+        <div class="bg">
+            <div class="main">
+                <div class="wrap">
+                    <h1 class="headline">Kamu baru saja log out!</h1> 
+                    <table>  
+                        <tr><td>Username</td><td>$(username)</td></tr>
+                        <tr><td>IP address</td><td>$(ip)</td></tr>
+                        <!-- <tr><td>MAC address</td><td>$(mac)</td></tr> -->
+                        <tr><td>Session time</td><td>$(uptime)</td></tr>
+                        $(if session-time-left)
+                        <tr><td>Time left</td><td>$(session-time-left)</td></tr>
+                        $(endif)
+                        <tr><td>Bytes up / down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                    </table>
+                    <!-- <form action="$(link-login)" name="login"></form> -->
+                    <a href="login.html"><input type="submit" value="Log in"></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="ft-kontak">
+                <p id="detail-bantuan">Supported by: </p>
+                <a href="https://lifemedia.id"><img id="ft-wa" src="static\img\logo-lifemedia.png" alt="logo-wa"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

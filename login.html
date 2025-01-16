@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta charset="utf-8">
+    <meta name="description" content="Hotspot Area Pengadilan Negeri Jepara">
+    <meta name="keywords" content="Hotspot Area Pengadilan Negeri Jepara">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Hotspot Area Pengadilan Negeri Jepara</title>
+    <link href="static\css\style1.css" rel="stylesheet">
+</head>
+
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+    
+    <div class="ie-fixMinHeight" style="display: flex; flex-flow:column wrap;">
+        <!-- <div class="header">
+            <img id="logo-lm" src="static\img\logo-lifemedia.png" alt="lifemedia">
+            <div class="nav">
+                    <ul class="navbar-link">
+                        <li><a href="login.html">Beranda</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="https://wa.me/622746055655"><button class="btn-kontak">Kontak</button></a></li>
+                    </ul>
+            </div>
+        </div> -->
+        <div class="bg">
+            <div class="main">
+                <div class="wrap animated fadeIn">
+                    <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+                        <h1 class="headline">Hotspot Area <br> Pengadilan Negeri Jepara</h1>
+                        <img class="logo-central" src="static\img\pn-jepara.png" alt="jepara">
+                        <p class="info $(if error)alert$(endif)">
+                            $(if error == "")Please log in to use the internet hotspot service $(if trial == 'yes')<br />Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)
+                            $(endif)
+    
+                            $(if error)$(error)$(endif)
+                        </p>
+                        <label>
+                            <img class="ico" src="static\img\user.svg" alt="#" />
+                            <input name="username" type="text" value="$(username)" placeholder="Username" />
+                        </label>
+                        <label>
+                            <img class="ico" src="static\img\password.svg" alt="#" />
+                            <input name="password" type="password" placeholder="Password" />
+                        </label>
+                        <input type="submit" value="Login" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="ft-kontak">
+                <p id="detail-bantuan">Supported by: </p>
+                <a href="https://lifemedia.id"><img id="ft-wa" src="static\img\logo-lifemedia.png" alt="logo-wa"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
